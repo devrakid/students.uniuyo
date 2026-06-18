@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Roboto Fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+      <!-- Poppins Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <title>UNIUYO Student Portal</title>
+  <style>
+  :root {
+      --green-bg: #00A63D;
+      --prvs-fee: #F3F4F6;
+      --blue-gray: #7786A1;
+      --line-color: #E5EAF2;
+    }
+    * {
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+    a {
+      color:inherit;
+      text-decoration:none;
+    }
+    body{
+      padding-top:70px;
+    }
+    .header {
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      display:flex;
+      align-items: center;
+      justify-content:space-between;
+      padding:20px;
+    }
+    .u-txt {
+      background: #e6ebf3;
+      border-radius:5px;
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      width:33px;
+      height:33px;
+      border:0.5px solid rgba(0,0,0,0.3);
+      font-size:15px;
+    }
+    .right-head {
+      display:flex;
+      align-items: center;
+      gap:10px;
+    }
+    .screen-div {
+      display: flex;
+      align-items: center;
+      min-height: 100vh;
+      padding:15px;
+    }
+    .whole-div {
+      width:100%;
+    }
+    .fee-txt {
+      font-family:'Poppins', Arial;
+      font-size:24px;
+      font-weight:400;
+      text-align:center;
+      margin-bottom:30px;
+    }
+    .detail-div {
+      display:flex;
+      flex:1;
+      justify-content:space-between;
+      align-items:center;
+      color:var(--blue-gray);
+      font-family:Roboto, Arial
+      font-size:18px;
+    }
+    .buttons-div {
+      display:flex;
+      margin-top:30px;
+      margin-bottom:30px;
+    }
+    .buttons-div button {
+      background:var(--green-bg);
+      height:35px;
+      width:100%;
+      border:none;
+      border-radius: 5px;
+      margin-left:8px;
+      color:white;
+      font-family:'Roboto', Arial;
+      font-size:14px;
+      cursor:pointer;
+      font-weight:500;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .buttons-div .prvs-btn {
+      background:var(--prvs-fee);
+      color:black;
+    }
+    .buttons-div svg,
+    .init-btn svg {
+      margin-right:8px;
+      height:17px;
+      width:17px;
+    }
+    .payment-section label {
+      display:block;
+      font-family:'Roboto', Arial;
+      font-size:15px;
+      font-weight:500;
+      padding:8px;
+      color:#334155;
+    }
+    .payment-section select {
+      width:100%;
+      height:40px;
+      border-radius:8px;
+      border: 1px solid var(--line-color);
+      background:white;
+      color:var(--blue-gray);
+      outline:none;
+      padding:10px;
+      font-family:'Poppins',sans-serif;
+      font-size:14px;
+      appearance:none;
+      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='7' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(0,0,0,0.4' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat:no-repeat;
+      background-position: right 15px center;
+    }
+    .session-div,
+    .amount-div {
+      height:130px;
+      margin-top:18px;
+      border:1px solid var(--line-color);
+      border-radius:8px;
+      padding:15px;
+    }
+    .amount-div {
+      height:90px;
+    }
+    .date-div {
+      display:flex;
+      justify-content:space-between;
+      font-family:'Roboto', sans-serif;
+      font-size:14px;
+      font-weight:500;
+    }
+    .date-div svg {
+      width:17px;
+      height:17px;
+      color:#A0AEC4;
+    }
+    .txt-under {
+      margin-top:10px;
+      font-size:24px;
+      color:var(--blue-gray);
+      font-family:Poppins, sans-serif;
+    }
+    .init-btn {
+      background:var(--green-bg);
+      height:40px;
+      width:100%;
+      border:none;
+      border-radius:8px;
+      color:white;
+      font-family:'Roboto', Arial;
+      font-size:15px;
+      font-weight:500;
+      cursor:pointer;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-top:20px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+     xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 8H20" stroke="#7786A1" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M4 16H20" stroke="#7786A1" stroke-width="2.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="right-head">
+    <div class="u-txt">U</div>
+    <div>
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+     xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 9L12 15L18 9"
+        stroke="#7786A1"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"/>
+      </svg>
+    </div>
+    </div>
+  </header>
+  
+  <div class="screen-div">
+    <div class="whole-div">
+      <div class="fee-txt">School Fee Payment</div>
+      
+      <div class="detail-div">
+        <div></div>
+        <span>Eric Umoren (25/EG/CO/049) - Undergraduate (FT)</span>
+        <div></div>
+      </div>
+      
+      <!-- Payment Toggle -->
+      <div class="buttons-div">
+        <button>
+         <svg class="shrink-0 [:where(&amp;)]:size-4" data-flux-icon="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon">
+                      <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5V5h14v-.5A1.5 1.5 0 0 0 13.5 3h-11Z"></path>
+                      <path fill-rule="evenodd" d="M15 7H1v4.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V7ZM3 10.25a.75.75 0 0 1 .75-.75h.5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1-.75-.75Zm3.75-.75a.75.75 0 0 0 0 1.5h2.5a.75.75 0 0 0 0-1.5h-2.5Z" clip-rule="evenodd"></path>
+                    </svg>Pay Current Fee
+        </button>
+        <button class="prvs-btn">
+           <svg class="shrink-0 [:where(&amp;)]:size-4" data-flux-icon="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon">
+                      <path fill-rule="evenodd" d="M12.5 9.75A2.75 2.75 0 0 0 9.75 7H4.56l2.22 2.22a.75.75 0 1 1-1.06 1.06l-3.5-3.5a.75.75 0 0 1 0-1.06l3.5-3.5a.75.75 0 0 1 1.06 1.06L4.56 5.5h5.19a4.25 4.25 0 0 1 0 8.5h-1a.75.75 0 0 1 0-1.5h1a2.75 2.75 0 0 0 2.75-2.75Z" clip-rule="evenodd"></path>
+                    </svg>Pay Previous Fee
+        </button>
+      </div>
+      
+      <!-- Payment Section -->
+        <div class="payment-section">
+          <label for="option">Payment Option</label>
+          <select>
+            <option value="2nd Semester">2nd Semester</option>
+            <option value="1st Semester">1st Semester</option>
+          </select>
+        </div>
+      
+      <!-- Level Section -->
+      <div class="amount-div">
+        <div class="date-div">
+          <div>Total Amount Due (&#8358;)</div>
+          <div>
+          <svg class="shrink-0 [:where(&amp;)]:size-4 ml-auto text-zinc-400" data-flux-icon="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon">
+         <path fill-rule="evenodd" d="M4.22 11.78a.75.75 0 0 1 0-1.06L9.44 5.5H5.75a.75.75 0 0 1 0-1.5h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V6.56l-5.22 5.22a.75.75 0 0 1-1.06 0Z" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+      </div>
+  <div class="txt-under">&#8358;65,750.00</div>
+</div>
+      
+      <div class="session-div">
+        <div class="date-div">
+          <div>2025/2026</div>
+          <div>
+            <svg class="shrink-0 [:where(&amp;)]:size-4 ml-auto text-zinc-400" data-flux-icon="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon">
+            <path fill-rule="evenodd" d="M4.22 11.78a.75.75 0 0 1 0-1.06L9.44 5.5H5.75a.75.75 0 0 1 0-1.5h5.5a.75.75 0 0 1 .75.75v5.5a.75.75 0 0 1-1.5 0V6.56l-5.22 5.22a.75.75 0 0 1-1.06 0Z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="txt-under">100L (Undergraduate (FT)) - 2nd Semester</div>
+      </div>
+      
+      <a href="https://wa.me//+2348027280248">
+       <button class="init-btn">         <svg class="shrink-0 [:where(&amp;)]:size-4" data-flux-icon="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" data-slot="icon">
+           <path d="M2.5 3A1.5 1.5 0 0 0 1 4.5V5h14v-.5A1.5 1.5 0 0 0 13.5 3h-11Z"></path>
+           <path fill-rule="evenodd" d="M15 7H1v4.5A1.5 1.5 0 0 0 2.5 13h11a1.5 1.5 0 0 0 1.5-1.5V7ZM3 10.25a.75.75 0 0 1 .75-.75h.5a.75.75 0 0 1 0 1.5h-.5a.75.75 0 0 1-.75-.75Zm3.75-.75a.75.75 0 0 0 0 1.5h2.5a.75.75 0 0 0 0-1.5h-2.5Z" clip-rule="evenodd"></path>
+         </svg>Initiate Payment</button>
+        </a>
+    </div>
+  </div>
+</body>
+
+</html>
